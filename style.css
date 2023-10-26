@@ -1,0 +1,105 @@
+.card {
+  width: 300px;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+  transition: transform 1s, box-shadow 600ms;
+}
+.card .img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: border-radius 300ms;
+}
+.card .img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.25);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.card .img-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.card .img-wrapper h3 {
+  font-weight: 900;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  color: #fbf1c3;
+  font-size: 36px;
+  transform: translateX(-300px);
+  transition: transform 600ms;
+}
+
+.card .card-body {
+  padding: 1.2rem;
+  background-color: white;
+  position: absolute;
+  border: 2px solid lightgray;
+  border-top: none;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  opacity: 0;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+  transition: opacity 300ms, box-shadow 600ms;
+}
+
+.card .card-body > * {
+  opacity: 0;
+  transition: opacity 600ms 500ms;
+}
+
+.card .card-body > *:nth-child(2) {
+  transition-delay: 600ms;
+}
+.card .card-body > *:nth-child(3) {
+  transition-delay: 700ms;
+}
+
+.card .card-body h4 {
+  margin: 0;
+}
+
+.card .card-body button {
+  border: none;
+  background-color: #c95500;
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  color: white;
+  width: 100%;
+}
+
+.card:hover,
+.card:hover .card-body {
+  box-shadow: 0 16px 60px rgb(0 0 0 / 30%);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.card:hover .img-wrapper {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.card:hover .img-wrapper h3 {
+  transform: translateX(0);
+}
+
+.card:hover .img-wrapper::before {
+  opacity: 1;
+}
+
+.card:hover .card-body {
+  opacity: 1;
+}
+
+.card:hover .card-body > * {
+  opacity: 1;
+}

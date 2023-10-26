@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin-inline: auto;
+            margin-top: 3rem;
+        }
+
+        .rectangle {
+            width: 300px;
+            padding: 1rem 3rem;
+            background-color: palevioletred;
+            margin-top: 2rem;
+        }
+
+        #n1 {
+            transform: rotate(-15deg);
+            transform-origin: top left;
+        }
+
+        #n2 {
+            transform: rotateX(45deg)
+        }
+
+        #n3 {
+            transform: rotateY(65deg)
+        }
+
+        #n4 {
+            transform: rotateZ(-5deg)
+        }
+
+        #n5 {
+            transform: skew(-15deg, 15deg)
+        }
+
+        #n6 {
+            transform: skewX(-5deg)
+        }
+
+        #n7 {
+            transform: skewY(-15deg)
+        }
+
+        #n8 {
+            transform: scaleX(1.1)
+        }
+
+        #n9 {
+            transform: scaleY(1.5)
+        }
+
+        #n10 {
+            transform: scale(0.5)
+        }
+
+        #n11 {
+            transform: translateX(50px)
+        }
+
+        #n12 {
+            transform: translateY(50px)
+        }
+
+        #n13 {
+            transform: perspective(1000px) translateZ(50px)
+        }
+
+        #n15 {
+            transform: perspective(1000px) rotate3d(1, 1, 0, 45deg)
+                /*45 gradi applicati solo all'asse x e y*/
+        }
+
+        #n16 {
+            /* transform: perspective(1000px) rotate3d(0, 1, 0, 274deg) scale3d(1, 1, 0.8); */
+            transform-style: preserve-3d;
+
+            /* con proprietà singole */
+            perspective: 1000px;
+            rotate: y 283deg;
+            scale: 1 1 0.5;
+        }
+
+        #n16 div:first-of-type {
+            background-color: darkcyan;
+            transform: perspective(1000px) rotate3d(0, 1, 0, 90deg)
+        }
+
+        #n16 div:nth-of-type(2) {
+            background-color: darkgoldenrod;
+            transform: perspective(1000px) rotate3d(0, 1, 0, -45deg)
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="n1" class="rectangle">Rotate</div>
+        <div id="n2" class="rectangle">Rotate X</div>
+        <div id="n3" class="rectangle">Rotate Y</div>
+        <div id="n4" class="rectangle">Rotate Z</div>
+        <div id="n5" class="rectangle">Skew</div>
+        <div id="n6" class="rectangle">Skew X</div>
+        <div id="n7" class="rectangle">Skew Y</div>
+        <div id="n8" class="rectangle">Scale X</div>
+        <div id="n9" class="rectangle">Scale Y</div>
+        <div id="n10" class="rectangle">Scale</div>
+        <div id="n11" class="rectangle">TranslateX</div>
+        <div id="n12" class="rectangle">TranslateY</div>
+        <div id="n13" class="rectangle">TranslateZ</div>
+        <div id="n14" class="rectangle">TranslateXYZ</div>
+        <div id="n15" class="rectangle">Rotate 3d</div>
+        <div id="n16" class="rectangle">Scale 3d
+
+            <div>child1</div>
+            <div>child2</div>
+        </div>
+    </div>
+</body>
+
+</html>
